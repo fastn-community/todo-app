@@ -1,0 +1,4 @@
+-- record todo:
+optional integer id:
+string todo:
+boolean complete:

@@ -1,0 +1,66 @@
+-- import: todo-app/components/button
+-- import: todo-app/components/switch
+-- import: todo-app/components/todo as todo-ui
+-- import: todo-app/components/layout
+-- import: todo-app/utils
+-- import: todo-app/api/models
+
+-- import: fastn/processors as pr
+
+;; export FASTN_PG_URL=postgres://postgres:[YOUR_PASSWORD]@db.befeclviskdeebgupsnm.supabase.co:6543/postgres
+
+-- models.todo list todos:
+$processor$: pr.pg
+
+SELECT * FROM todos;
+
+-- layout.container:
+
+-- ftd.row:
+width: fill-container
+align-content: center
+spacing: space-between
+
+-- ftd.text: Todo App
+role: $inherited.types.heading-large
+
+-- ftd.row:
+align-content: center
+role: $inherited.types.label-large
+spacing.fixed.rem: 1
+
+-- ftd.text: Dark mode:
+
+-- switch.theme:
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- todo-ui.bar:
+
+-- todo-ui.input:
+
+-- button.primary: Add Todo
+
+-- end: todo-ui.bar
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.rem: 1
+
+-- ftd.text: Todos
+role: $inherited.types.heading-small
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.rem: 1
+
+-- todo-ui.item: $todo.todo
+for: $todo in $todos
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: layout.container

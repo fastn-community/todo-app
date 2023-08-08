@@ -1,0 +1,17 @@
+-- import: todo-app/theme/color-scheme
+
+-- component container:
+children sections:
+
+-- ftd.column:
+children: $container.sections
+background.solid: $color-scheme.background
+color: $color-scheme.foreground
+padding.rem: 2
+spacing.fixed.rem: 2
+width: fill-container
+height: fill-container
+
+-- end: ftd.column
+
+-- end: container

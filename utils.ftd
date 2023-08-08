@@ -1,0 +1,7 @@
+-- boolean is-dark-mode():
+
+ftd.get(ftd.dark_mode)
+
+-- void toggle-mode():
+
+ftd.toggle_mode()

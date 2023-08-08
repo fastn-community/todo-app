@@ -1,0 +1,52 @@
+-- import: todo-app/components/button
+-- import: todo-app/theme/color-scheme
+
+;;
+
+-- component input:
+
+-- ftd.text-input:
+padding.rem: 1
+background.solid: $color-scheme.input-background
+color: $color-scheme.input-color
+placeholder: Enter your todo...
+
+-- end: input
+
+;;
+
+-- component bar:
+children children:
+
+-- ftd.row:
+children: $bar.children
+spacing.fixed.rem: 1
+align-content: center
+
+-- end: ftd.row
+
+-- end: bar
+
+;;
+
+-- component item:
+caption string todo:
+
+-- ftd.row:
+padding.rem: 1
+spacing: space-between
+background.solid: $color-scheme.surface
+color: $color-scheme.on-surface
+width: fill-container
+
+-- ftd.text: $item.todo
+role: $inherited.types.copy-regular
+
+-- ftd.text: Delete
+role: $inherited.types.copy-small
+padding.rem: .25
+cursor: pointer
+
+-- end: ftd.row
+
+-- end: item

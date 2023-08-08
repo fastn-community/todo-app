@@ -1,0 +1,31 @@
+-- ftd.color background:
+light: #ffffff
+dark: #000000
+
+-- ftd.color foreground:
+light: #000000
+dark: #ffffff
+
+-- ftd.color surface:
+light: #f1f1f1
+dark: #282828
+
+-- ftd.color on-surface:
+light: #000000
+dark: #ffffff
+
+-- ftd.color primary:
+light: #000000
+dark: #ffffff
+
+-- ftd.color on-primary:
+light: #ffffff
+dark: #000000
+
+-- ftd.color input-background:
+light: #f1f1f1
+dark: #2a2a2a
+
+-- ftd.color input-color:
+light: #000000
+dark: #ffffff
