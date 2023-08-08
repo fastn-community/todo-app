@@ -1,5 +1,5 @@
 -- import: todo-app/components/button
--- import: todo-app/theme/color-scheme
+-- import: todo-app/theme/colors
 
 ;;
 
@@ -7,8 +7,8 @@
 
 -- ftd.text-input:
 padding.rem: 1
-background.solid: $color-scheme.input-background
-color: $color-scheme.input-color
+background.solid: $colors.input-background
+color: $colors.input-color
 placeholder: Enter your todo...
 
 -- end: input
@@ -35,8 +35,8 @@ caption string todo:
 -- ftd.row:
 padding.rem: 1
 spacing: space-between
-background.solid: $color-scheme.surface
-color: $color-scheme.on-surface
+background.solid: $colors.surface
+color: $colors.on-surface
 width: fill-container
 
 -- ftd.text: $item.todo

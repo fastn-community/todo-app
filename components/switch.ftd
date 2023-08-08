@@ -1,4 +1,4 @@
--- import: todo-app/theme/color-scheme
+-- import: todo-app/theme/colors
 -- import: todo-app/utils
 
 -- boolean $dark-mode-enabled: $utils.is-dark-mode()
@@ -6,7 +6,7 @@
 -- component theme:
 
 -- ftd.container:
-background.solid: $color-scheme.primary
+background.solid: $colors.primary
 border-radius.rem: 1
 width.fixed.rem: 3.5
 height.fixed.rem: 1.5
@@ -18,7 +18,7 @@ $on-click$: $ftd.toggle($a = $dark-mode-enabled)
 top.rem: .25
 right.rem if { dark-mode-enabled }: .25
 left.rem if { !dark-mode-enabled }: .25
-background.solid: $color-scheme.on-primary
+background.solid: $colors.on-primary
 width.fixed.rem: 1
 height.fixed.rem: 1
 border-radius.percent: 50

@@ -1,4 +1,4 @@
--- import: todo-app/theme/color-scheme
+-- import: todo-app/theme/colors
 
 -- component primary:
 caption string text:
@@ -7,8 +7,8 @@ caption string text:
 padding-horizontal.rem: 1
 padding-vertical.rem: .75
 spacing.fixed.rem: .5
-background.solid: $color-scheme.primary
-color: $color-scheme.on-primary
+background.solid: $colors.primary
+color: $colors.on-primary
 role: $inherited.types.copy-small
 cursor: pointer
 
