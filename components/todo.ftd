@@ -12,8 +12,9 @@ string $todo:
 padding.rem: 1
 background.solid: $colors.input-background
 color: $colors.input-color
-placeholder: Enter your todo...
+placeholder: enter your todo...
 $on-input$: $ftd.set-string($a = $input.todo, v = $VALUE)
+border-radius.rem: .5
 
 -- end: input
 
@@ -49,7 +50,7 @@ width: fill-container
 -- ftd.text: *$item.todo.todo
 role: $inherited.types.copy-regular
 
--- ftd.text: Delete
+-- ftd.text: ✕ delete
 role: $inherited.types.copy-small
 padding.rem: .25
 cursor: pointer

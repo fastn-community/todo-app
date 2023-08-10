@@ -32,8 +32,8 @@ align-content: center
 spacing: space-between
 wrap: true
 
--- ftd.text: Todo App
-role: $inherited.types.heading-large
+-- ftd.text: todo app
+role: $inherited.types.heading-medium
 
 -- ftd.row:
 align-content: center

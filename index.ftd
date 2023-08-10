@@ -9,6 +9,8 @@
 
 ;; export FASTN_PG_URL=postgres://postgres:[YOUR_PASSWORD]@db.befeclviskdeebgupsnm.supabase.co:6543/postgres
 
+;; Fetching todos from db
+
 -- models.todo list $todos:
 $processor$: pr.pg
 
@@ -17,6 +19,8 @@ SELECT * FROM todos;
 -- models.todo $todo-model:
 todo: Hello
 complete: false
+
+;; The home page
 
 -- layout.container:
 
@@ -34,6 +38,7 @@ spacing.fixed.rem: .5
 background.solid: $colors.primary
 color: $colors.on-primary
 role: $inherited.types.copy-small
+border-radius.rem: .5
 cursor: pointer
 $on-click$: $repository.add-todo(todo = *$todo-model, $todos = $todos)
 
@@ -47,7 +52,7 @@ $on-click$: $repository.add-todo(todo = *$todo-model, $todos = $todos)
 width: fill-container
 spacing.fixed.rem: 1
 
--- ftd.text: Todos
+-- ftd.text: todos
 role: $inherited.types.heading-small
 
 -- ftd.column:
