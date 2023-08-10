@@ -1,8 +1,6 @@
 -- import: todo-app/theme/colors
 -- import: todo-app/utils
 
--- boolean $dark-mode-enabled: $utils.is-dark-mode()
-
 -- component theme:
 
 -- ftd.row:
@@ -11,7 +9,7 @@ role: $inherited.types.label-large
 spacing.fixed.rem: 1
 
 -- ftd.text: Dark mode:
-text if { dark-mode-enabled }: Light Mode:
+text if { !ftd.dark-mode }: Light Mode:
 
 -- ftd.container:
 background.solid: $colors.primary
@@ -20,12 +18,11 @@ width.fixed.rem: 3.5
 height.fixed.rem: 1.5
 padding.rem: .25
 $on-click$: $utils.toggle-mode()
-$on-click$: $ftd.toggle($a = $dark-mode-enabled)
 
 -- ftd.container:
 top.rem: .25
-right.rem if { dark-mode-enabled }: .25
-left.rem if { !dark-mode-enabled }: .25
+right.rem if { ftd.dark-mode }: .25
+left.rem if { !ftd.dark-mode }: .25
 background.solid: $colors.on-primary
 width.fixed.rem: 1
 height.fixed.rem: 1
