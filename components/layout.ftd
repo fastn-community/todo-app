@@ -1,6 +1,9 @@
+-- import: todo-app/assets
 -- import: todo-app/theme/colors
 -- import: todo-app/components/switch
 -- import: todo-app/utils
+
+;; Container
 
 -- component container:
 children sections:
@@ -19,22 +22,38 @@ overflow: auto
 
 -- end: container
 
+;; Header
+
 -- component header:
 
 -- ftd.row:
 width: fill-container
 align-content: center
 spacing: space-between
+wrap: true
 
 -- ftd.text: Todo App
 role: $inherited.types.heading-large
 
 -- ftd.row:
+align-content: center
+spacing.fixed.rem: 2
 
--- ftd.iframe:
-src: https://ghbtns.com/github-btn.html?user=fastn-community&repo=todo-app&type=star&count=true&size=large
-width.fixed.px: 170
-height.fixed.px: 30
+-- ftd.row:
+align-content: center
+spacing.fixed.rem: .5
+cursor: pointer
+$on-click$: $utils.open-github()
+
+-- ftd.image: 
+src: $assets.files.images.github.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: todo-app
+role: $inherited.types.copy-regular
+
+-- end: ftd.row
 
 -- switch.theme:
 
@@ -43,3 +62,12 @@ height.fixed.px: 30
 -- end: ftd.row
 
 -- end: header
+
+;; Footer
+
+-- component footer:
+
+-- ftd.text: -- built.with: fastn
+role: $inherited.types.copy-regular
+
+-- end: footer

@@ -1,3 +1,7 @@
 -- void toggle-mode():
 
 ftd.toggle_mode()
+
+-- void open-github():
+
+window.open("https://github.com/fastn-community/todo-app")

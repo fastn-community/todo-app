@@ -64,4 +64,6 @@ for: $todo, $index in $todos
 
 -- end: ftd.column
 
+-- layout.footer:
+
 -- end: layout.container
