@@ -1,5 +1,6 @@
 -- import: todo-app/theme/colors
 -- import: todo-app/components/switch
+-- import: todo-app/utils
 
 -- component container:
 children sections:
@@ -12,6 +13,7 @@ padding.rem: 2
 spacing.fixed.rem: 2
 width: fill-container
 height: fill-container
+overflow: auto
 
 -- end: ftd.column
 
@@ -28,11 +30,11 @@ spacing: space-between
 role: $inherited.types.heading-large
 
 -- ftd.row:
-align-content: center
-role: $inherited.types.label-large
-spacing.fixed.rem: 1
 
--- ftd.text: Dark mode:
+-- ftd.iframe:
+src: https://ghbtns.com/github-btn.html?user=fastn-community&repo=todo-app&type=star&count=true&size=large
+width.fixed.px: 170
+height.fixed.px: 30
 
 -- switch.theme:
 

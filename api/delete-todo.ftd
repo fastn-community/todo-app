@@ -1,15 +1,18 @@
 -- import: fastn/processors as pr
 
--- string todo:
+-- record r-data:
+integer id:
+
+-- r-data data:
 $processor$: pr.request-data
 
 -- integer status:
 $processor$: pr.pg
-todo: $todo
+id: $data.id
 
-INSERT INTO todos(todo, complete) VALUES ($todo::VARCHAR, false)
+DELETE FROM todos WHERE id = $id;
 
--- ftd.text: Success
+-- ftd.text: Todo deleted
 text if { status == 1 }: Something went wrong
 
 -- ftd.redirect: /

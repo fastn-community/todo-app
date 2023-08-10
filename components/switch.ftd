@@ -5,6 +5,14 @@
 
 -- component theme:
 
+-- ftd.row:
+align-content: center
+role: $inherited.types.label-large
+spacing.fixed.rem: 1
+
+-- ftd.text: Dark mode:
+text if { dark-mode-enabled }: Light Mode:
+
 -- ftd.container:
 background.solid: $colors.primary
 border-radius.rem: 1
@@ -27,6 +35,8 @@ anchor: parent
 -- end: ftd.container
 
 -- end: ftd.container
+
+-- end: ftd.row
 
 -- end: theme
 

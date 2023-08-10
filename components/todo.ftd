@@ -1,5 +1,6 @@
 -- import: todo-app/components/button
 -- import: todo-app/theme/colors
+-- import: todo-app/api/models
 
 ;;
 
@@ -32,7 +33,10 @@ align-content: center
 ;;
 
 -- component item:
-caption string todo:
+models.todo list $todos:
+models.todo $todo:
+integer index:
+integer id:
 
 -- ftd.row:
 padding.rem: 1
@@ -41,14 +45,21 @@ background.solid: $colors.surface
 color: $colors.on-surface
 width: fill-container
 
--- ftd.text: $item.todo
+-- ftd.text: *$item.todo.todo
 role: $inherited.types.copy-regular
 
 -- ftd.text: Delete
 role: $inherited.types.copy-small
 padding.rem: .25
 cursor: pointer
+$on-click$: $delete-todo($todo = *$item.todo, $todos = $item.todos)
 
 -- end: ftd.row
 
 -- end: item
+
+-- void delete-todo($todo,$todos):
+models.todo $todo:
+models.todo list $todos:
+
+ftd.http("/api/delete-todo?id=" + ftd.get(todo, "id"), "GET"); 

@@ -8,7 +8,7 @@
 
 ;; export FASTN_PG_URL=postgres://postgres:[YOUR_PASSWORD]@db.befeclviskdeebgupsnm.supabase.co:6543/postgres
 
--- models.todo list todos:
+-- models.todo list $todos:
 $processor$: pr.pg
 
 SELECT * FROM todos;
@@ -34,9 +34,9 @@ background.solid: $colors.primary
 color: $colors.on-primary
 role: $inherited.types.copy-small
 cursor: pointer
-$on-click$: $add-todo($todo = $todo-model)
+$on-click$: $add-todo(todo = *$todo-model, $todos = $todos)
 
--- ftd.text: Add Todo
+-- ftd.text: add
 
 -- end: ftd.row
 
@@ -53,8 +53,11 @@ role: $inherited.types.heading-small
 width: fill-container
 spacing.fixed.rem: 1
 
--- todo-ui.item: $todo.todo
-for: $todo in $todos
+-- todo-ui.item:
+$todo: $todo
+$todos: $todos
+index: $index
+for: $todo, $index in $todos
 
 -- end: ftd.column
 
@@ -62,7 +65,8 @@ for: $todo in $todos
 
 -- end: layout.container
 
--- void add-todo($todo):
-models.todo $todo:
+-- void add-todo(todo,todos):
+models.todo todo:
+models.todo list $todos:
 
-ftd.http("/api/add-todo", "GET", todo)
+ftd.http("/api/add-todo?todo=" + ftd.get(todo, "todo"), "GET")
