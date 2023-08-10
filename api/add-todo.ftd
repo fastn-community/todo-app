@@ -1,0 +1,12 @@
+-- import: fastn/processors as pr
+-- import: todo-app/api/models
+
+-- models.todo request:
+$processor$: pr.request-data
+
+-- integer todo-id:
+$processor$: pr.pg
+
+INSERT INTO todos(todo, complete) VALUES ('New Stuff', false)
+
+-- ftd.integer: $todo-id

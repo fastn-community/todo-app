@@ -4,12 +4,14 @@
 ;;
 
 -- component input:
+string $todo:
 
 -- ftd.text-input:
 padding.rem: 1
 background.solid: $colors.input-background
 color: $colors.input-color
 placeholder: Enter your todo...
+$on-input$: $ftd.set-string($a = $input.todo, v = $VALUE)
 
 -- end: input
 

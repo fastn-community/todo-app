@@ -1,4 +1,5 @@
 -- import: todo-app/theme/colors
+-- import: todo-app/components/switch
 
 -- component container:
 children sections:
@@ -15,3 +16,28 @@ height: fill-container
 -- end: ftd.column
 
 -- end: container
+
+-- component header:
+
+-- ftd.row:
+width: fill-container
+align-content: center
+spacing: space-between
+
+-- ftd.text: Todo App
+role: $inherited.types.heading-large
+
+-- ftd.row:
+align-content: center
+role: $inherited.types.label-large
+spacing.fixed.rem: 1
+
+-- ftd.text: Dark mode:
+
+-- switch.theme:
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: header

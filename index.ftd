@@ -1,9 +1,8 @@
--- import: todo-app/components/button
--- import: todo-app/components/switch
 -- import: todo-app/components/todo as todo-ui
 -- import: todo-app/components/layout
 -- import: todo-app/utils
 -- import: todo-app/api/models
+-- import: todo-app/theme/colors
 
 -- import: fastn/processors as pr
 
@@ -14,34 +13,32 @@ $processor$: pr.pg
 
 SELECT * FROM todos;
 
+-- models.todo $todo-model:
+todo: Hello
+complete: false
+
 -- layout.container:
 
--- ftd.row:
-width: fill-container
-align-content: center
-spacing: space-between
-
--- ftd.text: Todo App
-role: $inherited.types.heading-large
-
--- ftd.row:
-align-content: center
-role: $inherited.types.label-large
-spacing.fixed.rem: 1
-
--- ftd.text: Dark mode:
-
--- switch.theme:
-
--- end: ftd.row
-
--- end: ftd.row
+-- layout.header:
 
 -- todo-ui.bar:
 
 -- todo-ui.input:
+$todo: $todo-model.todo
 
--- button.primary: Add Todo
+-- ftd.row:
+padding-horizontal.rem: 1
+padding-vertical.rem: .75
+spacing.fixed.rem: .5
+background.solid: $colors.primary
+color: $colors.on-primary
+role: $inherited.types.copy-small
+cursor: pointer
+$on-click$: $add-todo($todo = $todo-model)
+
+-- ftd.text: Add Todo
+
+-- end: ftd.row
 
 -- end: todo-ui.bar
 
@@ -64,3 +61,8 @@ for: $todo in $todos
 -- end: ftd.column
 
 -- end: layout.container
+
+-- void add-todo($todo):
+models.todo $todo:
+
+ftd.http("/api/add-todo", "GET", todo)

@@ -11,17 +11,10 @@ background.solid: $colors.primary
 color: $colors.on-primary
 role: $inherited.types.copy-small
 cursor: pointer
+$on-click$: $on-click
 
 -- ftd.text: $primary.text
 
 -- end: ftd.row
 
 -- end: primary
-
--- component icon:
-string src:
-
--- ftd.image:
-src: $icon.src
-
--- end: icon
