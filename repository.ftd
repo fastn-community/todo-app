@@ -1,0 +1,13 @@
+-- import: todo-app/api/models
+
+-- void add-todo(todo,todos):
+models.todo todo:
+models.todo list $todos:
+
+ftd.http("/api/add-todo?todo=" + ftd.get(todo, "todo"), "GET")
+
+-- void delete-todo($todo,$todos):
+models.todo $todo:
+models.todo list $todos:
+
+ftd.http("/api/delete-todo?id=" + ftd.get(todo, "id"), "GET"); 

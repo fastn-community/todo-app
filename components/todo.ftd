@@ -1,8 +1,9 @@
 -- import: todo-app/components/button
 -- import: todo-app/theme/colors
 -- import: todo-app/api/models
+-- import: todo-app/repository
 
-;;
+;; Todo Input
 
 -- component input:
 string $todo:
@@ -16,7 +17,7 @@ $on-input$: $ftd.set-string($a = $input.todo, v = $VALUE)
 
 -- end: input
 
-;;
+;; Todo Bar
 
 -- component bar:
 children children:
@@ -30,7 +31,7 @@ align-content: center
 
 -- end: bar
 
-;;
+;; Todo Item
 
 -- component item:
 models.todo list $todos:
@@ -52,14 +53,8 @@ role: $inherited.types.copy-regular
 role: $inherited.types.copy-small
 padding.rem: .25
 cursor: pointer
-$on-click$: $delete-todo($todo = *$item.todo, $todos = $item.todos)
+$on-click$: $repository.delete-todo($todo = *$item.todo, $todos = $item.todos)
 
 -- end: ftd.row
 
 -- end: item
-
--- void delete-todo($todo,$todos):
-models.todo $todo:
-models.todo list $todos:
-
-ftd.http("/api/delete-todo?id=" + ftd.get(todo, "id"), "GET"); 

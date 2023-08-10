@@ -3,6 +3,7 @@
 -- import: todo-app/utils
 -- import: todo-app/api/models
 -- import: todo-app/theme/colors
+-- import: todo-app/repository
 
 -- import: fastn/processors as pr
 
@@ -34,7 +35,7 @@ background.solid: $colors.primary
 color: $colors.on-primary
 role: $inherited.types.copy-small
 cursor: pointer
-$on-click$: $add-todo(todo = *$todo-model, $todos = $todos)
+$on-click$: $repository.add-todo(todo = *$todo-model, $todos = $todos)
 
 -- ftd.text: add
 
@@ -64,9 +65,3 @@ for: $todo, $index in $todos
 -- end: ftd.column
 
 -- end: layout.container
-
--- void add-todo(todo,todos):
-models.todo todo:
-models.todo list $todos:
-
-ftd.http("/api/add-todo?todo=" + ftd.get(todo, "todo"), "GET")
