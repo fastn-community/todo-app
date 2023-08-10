@@ -46,6 +46,9 @@ spacing: space-between
 background.solid: $colors.surface
 color: $colors.on-surface
 width: fill-container
+border-left-width.rem: .5
+border-color: $colors.primary
+border-style: solid
 
 -- ftd.text: *$item.todo.todo
 role: $inherited.types.copy-regular
