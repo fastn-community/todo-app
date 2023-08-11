@@ -22,6 +22,10 @@ complete: false
 
 ;; The home page
 
+-- ftd.document:
+title: todo app
+description: a todo app built using the fastn framework
+
 -- layout.container:
 
 -- layout.header:
@@ -72,3 +76,5 @@ for: $todo, $index in $todos
 -- layout.footer:
 
 -- end: layout.container
+
+-- end: ftd.document
