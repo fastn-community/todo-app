@@ -1,13 +1,21 @@
 -- import: todo-app/api/models
 
--- void add-todo(todo,todos):
+-- void add-todo(todo):
 models.todo todo:
-models.todo list $todos:
 
 ftd.navigate("/api/add-todo?todo=" + ftd.get(todo, "todo"))
 
--- void delete-todo($todo,$todos):
-models.todo $todo:
-models.todo list $todos:
+-- void delete-todo(todo):
+models.todo todo:
 
 ftd.navigate("/api/delete-todo?id=" + ftd.get(todo, "id")); 
+
+-- void toggle-todo-state(todo):
+models.todo todo:
+
+ftd.navigate("/api/update-todo?id=" + ftd.get(todo, "id") + "&complete=" + !ftd.get(todo, "complete") + "&todo=" + ftd.get(todo, "todo")); 
+
+-- void update-todo(todo):
+models.todo todo:
+
+ftd.navigate("/api/update-todo?id=" + ftd.get(todo, "id") + "&complete=" + ftd.get(todo, "complete") + "&todo=" + ftd.get(todo, "todo")); 

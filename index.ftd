@@ -22,10 +22,6 @@ complete: false
 
 ;; The home page
 
--- ftd.document:
-title: todo app
-description: a todo app built using the fastn framework
-
 -- layout.container:
 
 -- layout.header:
@@ -44,7 +40,7 @@ color: $colors.on-primary
 role: $inherited.types.copy-small
 border-radius.rem: .5
 cursor: pointer
-$on-click$: $repository.add-todo(todo = *$todo-model, $todos = $todos)
+$on-click$: $repository.add-todo(todo = *$todo-model)
 
 -- ftd.text: add
 
@@ -76,5 +72,3 @@ for: $todo, $index in $todos
 -- layout.footer:
 
 -- end: layout.container
-
--- end: ftd.document

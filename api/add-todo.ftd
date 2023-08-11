@@ -13,3 +13,4 @@ INSERT INTO todos(todo, complete) VALUES ($todo::VARCHAR, false)
 text if { status == 1 }: Something went wrong
 
 -- ftd.redirect: /
+code: 302

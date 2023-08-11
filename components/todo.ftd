@@ -1,3 +1,4 @@
+-- import: todo-app/assets
 -- import: todo-app/components/button
 -- import: todo-app/theme/colors
 -- import: todo-app/api/models
@@ -32,16 +33,37 @@ align-content: center
 
 -- end: bar
 
+;; Todo State Badge
+
+-- component badge:
+boolean complete:
+
+-- ftd.container:
+padding-horizontal.rem: 1
+padding-vertical.rem: .5
+border-radius.rem: .25
+background.solid: $colors.success
+background.solid if { !badge.complete }: $colors.danger
+
+-- ftd.text: done
+text if { !badge.complete }: pending
+
+-- end: ftd.container
+
+-- end: badge
+
 ;; Todo Item
 
 -- component item:
 models.todo list $todos:
 models.todo $todo:
+boolean $editing: false
 integer index:
 integer id:
 
 -- ftd.row:
 padding.rem: 1
+align-content: center
 spacing: space-between
 background.solid: $colors.surface
 color: $colors.on-surface
@@ -50,14 +72,36 @@ border-left-width.rem: .5
 border-color: $colors.primary
 border-style: solid
 
--- ftd.text: *$item.todo.todo
-role: $inherited.types.copy-regular
-
--- ftd.text: ✕ delete
-role: $inherited.types.copy-small
-padding.rem: .25
+-- ftd.image:
+src: $assets.files.images.checkbox.svg
+src if { item.todo.complete }: $assets.files.images.checkbox-fill.svg
+width.fixed.px: 24
+height.fixed.px: 24
 cursor: pointer
-$on-click$: $repository.delete-todo($todo = *$item.todo, $todos = $item.todos)
+$on-click$: $repository.toggle-todo-state(todo = *$item.todo)
+
+-- ftd.text: *$item.todo.todo
+if: { !item.editing }
+style: bold
+padding.rem: .25
+style if { item.todo.complete }: strike, bold
+role: $inherited.types.copy-regular
+$on-click$: $ftd.set-bool($a = $item.editing, v = true)
+
+-- ftd.text-input:
+default-value: *$item.todo.todo
+role: $inherited.types.copy-regular
+padding.rem: .25
+if: { item.editing }
+$on-input$: $ftd.set-string($a = $item.todo.todo, v = $VALUE)
+$on-blur$: $repository.update-todo(todo = $item.todo)
+
+-- ftd.image:
+src: $assets.files.images.delete-bin.svg
+width.fixed.px: 24
+height.fixed.px: 24
+cursor: pointer
+$on-click$: $repository.delete-todo(todo = *$item.todo)
 
 -- end: ftd.row
 

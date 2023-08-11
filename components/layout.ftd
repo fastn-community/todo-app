@@ -68,6 +68,7 @@ role: $inherited.types.copy-regular
 -- component footer:
 
 -- ftd.text: -- built.with: fastn
+align-self: end
 role: $inherited.types.copy-regular
 
 -- end: footer
