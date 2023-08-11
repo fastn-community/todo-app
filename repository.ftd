@@ -4,10 +4,10 @@
 models.todo todo:
 models.todo list $todos:
 
-ftd.http("/api/add-todo?todo=" + ftd.get(todo, "todo"), "GET")
+ftd.navigate("/api/add-todo?todo=" + ftd.get(todo, "todo"))
 
 -- void delete-todo($todo,$todos):
 models.todo $todo:
 models.todo list $todos:
 
-ftd.http("/api/delete-todo?id=" + ftd.get(todo, "id"), "GET"); 
+ftd.navigate("/api/delete-todo?id=" + ftd.get(todo, "id")); 

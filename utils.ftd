@@ -1,6 +1,6 @@
 -- void toggle-mode():
 
-ftd.toggle_mode()
+ftd.toggle_dark_mode()
 
 -- void open-github():
 
