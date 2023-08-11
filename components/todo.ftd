@@ -72,6 +72,10 @@ border-left-width.rem: .5
 border-color: $colors.primary
 border-style: solid
 
+-- ftd.row:
+spacing.fixed.rem: 1
+align-content: center
+
 -- ftd.image:
 src: $assets.files.images.checkbox.svg
 src if { item.todo.complete }: $assets.files.images.checkbox-fill.svg
@@ -95,6 +99,8 @@ padding.rem: .25
 if: { item.editing }
 $on-input$: $ftd.set-string($a = $item.todo.todo, v = $VALUE)
 $on-blur$: $repository.update-todo(todo = $item.todo)
+
+-- end: ftd.row
 
 -- ftd.image:
 src: $assets.files.images.delete-bin.svg
