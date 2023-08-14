@@ -2,6 +2,16 @@
 
 This is a full-stack todo-app project built using the Fastn language and utilizing Supabase for the PostgreSQL database. The app allows users to create, update, and delete tasks.
 
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Installation](#installation)
+3. [Project Structure](#project-structure)
+4. [Configuration](#configuration)
+5. [Usage](#usage)
+6. [Deployment to Heroku (Web)](#deployment-to-heroku-web)
+7. [Deployment to Heroku (CLI)](#deployment-to-heroku-cli)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following software and tools installed:
@@ -75,7 +85,7 @@ export FASTN_PG_URL=postgres://username:password@hostname:port/database
 
 ## Deployment to Heroku (Web)
 
-Follow these steps to deploy your Fastn Todo-App to Heroku using the Heroku web interface:
+Follow these steps to deploy your `fastn` Todo-App to Heroku using the Heroku web interface:
 
 1. **Create a Heroku App**:
 
