@@ -61,9 +61,49 @@ cd todo-app
 
 ## Configuration
 
-1. Set up your Supabase PostgreSQL database and obtain the database URL.
+Follow these steps to set up your Supabase PostgreSQL database and obtain the database URL for your Fastn Todo-App:
 
-2. Set the Path variable for database url: 
+1. **Sign Up/Login on Supabase**:
+
+- Visit the Supabase website at [https://supabase.io](https://supabase.io).
+- Sign up for a new account or log in to your existing account.
+
+2. **Create a New Project**:
+
+- Once you're logged in, click on the "New Project" button.
+- Give your project a name, and you can choose an existing organization or create a new one.
+- Click the "Create Project" button to proceed.
+
+3. **Access Visual Table Creator**:
+
+- In your project dashboard, navigate to the "Database" section by clicking on "Database" (icon) in the left sidebar.
+- Click on the "Tables" tab, and you'll be directed to the "Tables" page.
+
+4. **Create a New Table**:
+
+- Click the "New Table" button to open the Visual Table Creator.
+- Design your "todos" table:
+    - Add a "todo" column with the data type "VARCHAR".
+    - Add a "complete" column with the data type "Boolean".
+- Click the "Create Table" button to create the "todos" table.
+
+5. **Access Database Settings**:
+
+- On the "Tables" page, locate the "Settings" icon (represented by three vertical dots) for your newly created "todos" table.
+- Click on the "Settings" icon and select "Edit table".
+- Under the "Connection Pooling Custom Configuration" section, you'll find the connection string under the "Connection strings" section. It will look something like this:
+    
+    ```plaintext
+    postgres://username:password@hostname:port/database
+    ```
+
+6. **Replace the Database Password**:
+
+- Replace `[YOUR-PASSWORD]` in the connection string with the password you entered during the creation of the project. If you've forgotten the password, you can reset it:
+    - Under the "Database password" section on the same page, click on the "Reset database password" button.
+    - Follow the instructions to reset the password.
+
+7. Set the Path variable for database url: 
 
 ```bash
 export FASTN_PG_URL=postgres://username:password@hostname:port/database
