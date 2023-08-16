@@ -63,7 +63,8 @@ integer id:
 
 -- ftd.row:
 padding.rem: 1
-align-content: center
+css: styles.css
+classes: items-center
 spacing: space-between
 background.solid: $colors.surface
 color: $colors.on-surface

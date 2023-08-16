@@ -28,9 +28,10 @@ overflow: auto
 
 -- ftd.row:
 width: fill-container
-align-content: center
 spacing: space-between
 wrap: true
+css: styles.css
+classes: items-center
 
 -- ftd.text: todo app
 role: $inherited.types.heading-medium
