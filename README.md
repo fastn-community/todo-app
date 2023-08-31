@@ -1,6 +1,6 @@
-# Fastn Todo-App
+# fastn Todo-App
 
-This is a full-stack todo-app project built using the Fastn language and utilizing Supabase for the PostgreSQL database. The app allows users to create, update, and delete tasks.
+This is a full-stack todo-app project built using the `fastn` language and utilizing Supabase for the PostgreSQL database. The app allows users to create, update, and delete tasks.
 
 ## Table of Contents
 
@@ -61,7 +61,81 @@ cd todo-app
 
 ## Configuration
 
-Follow these steps to set up your Supabase PostgreSQL database and obtain the database URL for your Fastn Todo-App:
+### Locally Hosted PostgreSQL Database Setup
+
+1. **Install PostgreSQL**:
+
+   If you haven't already, download and install PostgreSQL on your machine from the official website: [https://www.postgresql.org/download/](https://www.postgresql.org/download/).
+
+2. **Login to PostgreSQL**:
+
+   After installation, you'll need to log in to your PostgreSQL instance using the command line or a GUI tool.
+
+3. **Create a New Database**:
+
+   Run the following command to create a new database:
+
+   ```sql
+   CREATE DATABASE your_database_name;
+   ```
+
+4. **Access the Database**:
+
+   Connect to the newly created database:
+
+   ```sql
+   \c your_database_name;
+   ```
+
+5. **Create a Table**:
+
+   Run the following SQL to create a "todos" table:
+
+   ```sql
+   CREATE TABLE todos (
+       id SERIAL PRIMARY KEY,
+       todo TEXT,
+       complete BOOLEAN
+   );
+   ```
+
+### Setting Up `fastn` Todo-app with Local PostgreSQL
+
+Now that you have your locally hosted PostgreSQL database ready, you can set up `fastn` Todo-App:
+
+1. **Replace Placeholder Variables**:
+
+   Replace the placeholders in the following connection string with your PostgreSQL credentials:
+
+   ```plaintext
+   postgres://username:password@hostname:port/your_database_name
+   ```
+
+2. **Set the Environment Variable**:
+
+   In your terminal, set the environment variable for the database URL:
+
+   ```bash
+   export FASTN_PG_URL=postgres://username:password@hostname:port/your_database_name
+   ```
+
+### SQL for "todos" Table
+
+Here's the SQL script to create the "todos" table:
+
+```sql
+CREATE TABLE todos (
+    id SERIAL PRIMARY KEY,
+    todo TEXT,
+    complete BOOLEAN
+);
+```
+
+You can also find this SQL script in the `todos.sql` file within the same GitHub repository.
+
+### Supabase PostgreSQL Database Setup
+
+Follow these steps to set up your Supabase PostgreSQL database and obtain the database URL for your `fastn` Todo-App:
 
 1. **Sign Up/Login on Supabase**:
 

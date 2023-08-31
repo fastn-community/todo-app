@@ -1,9 +1,9 @@
 -- import: todo-app/api/models
 
 -- void add-todo(todo):
-models.todo todo:
+string todo:
 
-ftd.navigate("/api/add-todo?todo=" + ftd.get(todo, "todo"))
+ftd.navigate("/api/add-todo?todo=" + todo)
 
 -- void delete-todo(todo):
 models.todo todo:

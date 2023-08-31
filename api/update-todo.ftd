@@ -10,7 +10,7 @@ id: $data.id
 complete: $data.complete
 todo: $data.todo
 
-UPDATE "todos" SET complete = $complete::BOOL, todo = $todo::VARCHAR WHERE id = $id;
+UPDATE "todos" SET complete = $complete::BOOL, todo = $todo::TEXT WHERE id = $id;
 
 -- ftd.text: Todo updated
 text if { status == 1 }: Something went wrong

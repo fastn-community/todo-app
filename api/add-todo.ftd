@@ -7,7 +7,7 @@ $processor$: pr.request-data
 $processor$: pr.pg
 todo: $todo
 
-INSERT INTO todos(todo, complete) VALUES ($todo::VARCHAR, false)
+INSERT INTO todos(todo, complete) VALUES ($todo::TEXT, false)
 
 -- ftd.text: Success
 text if { status == 1 }: Something went wrong

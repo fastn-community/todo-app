@@ -1,7 +1,6 @@
 -- import: todo-app/assets
 -- import: todo-app/theme/colors
 -- import: todo-app/components/switch
--- import: todo-app/utils
 
 ;; Container
 
@@ -29,9 +28,8 @@ overflow: auto
 -- ftd.row:
 width: fill-container
 spacing: space-between
+align-content: center
 wrap: true
-css: styles.css
-classes: items-center
 
 -- ftd.text: todo app
 role: $inherited.types.heading-medium
@@ -44,7 +42,9 @@ spacing.fixed.rem: 2
 align-content: center
 spacing.fixed.rem: .5
 cursor: pointer
-$on-click$: $utils.open-github()
+color: $colors.foreground
+link: https://github.com/fastn-community/todo-app
+open-in-new-tab: true
 
 -- ftd.image: 
 src: $assets.files.images.github.svg

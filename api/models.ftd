@@ -1,4 +1,4 @@
 -- record todo:
-optional integer id:
+integer id:
 string todo:
 boolean complete:
