@@ -11,7 +11,7 @@ id: $data.id
 complete: $data.complete
 todo: $data.todo
 
-UPDATE "todos" SET complete = :complete::INTEGER, todo = :todo::TEXT WHERE id = :id::INTEGER;
+UPDATE "todos" SET complete = $complete::INTEGER, todo = $todo::TEXT WHERE id = $id::INTEGER;
 
 -- ftd.text: Todo updated
 text if { status == 1 }: Something went wrong
