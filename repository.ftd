@@ -13,7 +13,7 @@ ftd.navigate("/api/delete-todo?id=" + ftd.get(todo, "id"));
 -- void toggle-todo-state(todo):
 models.todo todo:
 
-ftd.navigate("/api/update-todo?id=" + ftd.get(todo, "id") + "&complete=" + !ftd.get(todo, "complete") + "&todo=" + ftd.get(todo, "todo")); 
+ftd.navigate("/api/update-todo?id=" + ftd.get(todo, "id") + "&complete=" + (1 - ftd.get(todo, "complete")) + "&todo=" + ftd.get(todo, "todo")); 
 
 -- void update-todo(todo):
 models.todo todo:

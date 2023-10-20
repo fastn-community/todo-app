@@ -78,7 +78,7 @@ align-content: center
 
 -- ftd.image:
 src: $assets.files.images.checkbox.svg
-src if { item.todo.complete }: $assets.files.images.checkbox-fill.svg
+src if { item.todo.complete == 1 }: $assets.files.images.checkbox-fill.svg
 width.fixed.px: 24
 height.fixed.px: 24
 cursor: pointer
