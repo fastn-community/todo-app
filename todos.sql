@@ -1,5 +1,5 @@
 CREATE TABLE todos (
-    id SERIAL,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     todo TEXT,
-    complete bool
+    complete BOOLEAN
 );

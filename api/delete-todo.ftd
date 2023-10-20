@@ -7,10 +7,11 @@ integer id:
 $processor$: pr.request-data
 
 -- integer status:
-$processor$: pr.pg
+$processor$: pr.package-query
+db: db.sqlite
 id: $data.id
 
-DELETE FROM todos WHERE id = $id;
+DELETE FROM todos WHERE id = $id::INTEGER;
 
 -- ftd.text: Todo deleted
 text if { status == 1 }: Something went wrong

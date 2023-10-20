@@ -4,10 +4,11 @@
 $processor$: pr.request-data
 
 -- integer status:
-$processor$: pr.pg
+$processor$: pr.package-query
+db: db.sqlite
 todo: $todo
 
-INSERT INTO todos(todo, complete) VALUES ($todo::TEXT, false)
+INSERT INTO todos(todo, complete) VALUES ($todo::TEXT, 0)
 
 -- ftd.text: Success
 text if { status == 1 }: Something went wrong

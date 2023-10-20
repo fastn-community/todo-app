@@ -11,7 +11,8 @@
 ;; Fetching todos from db
 
 -- models.todo list $todos:
-$processor$: pr.pg
+$processor$: pr.package-query
+db: db.sqlite
 
 SELECT * FROM todos ORDER BY id DESC;
 
